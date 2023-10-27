@@ -6,7 +6,7 @@ const game_data_authentication =
 
 {
 
-    'K I N G S': 'jsjsj',
+    'K I N G S': new Date('2023/10/24'),
     'renatinho1999': 'fixed',
     'felipe5517': new Date('2023/11/24'),
     'M O S K A': new Date('2023/11/21'),
