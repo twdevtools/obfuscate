@@ -1,2 +1,1 @@
-const teste= document.referrer
-const teste2=window.location.href
+console.log(document.currentScript.src)
