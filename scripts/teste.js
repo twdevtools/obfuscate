@@ -14,11 +14,11 @@ const scriptURL = document.currentScript.src;
 
 $.getScript(
 	'https://twdevtools.github.io/database/scripts/authentication.js',
-	function () {
-		const arr = $('#serverDate').text().split('/');
-		const timeString = new Date(`${arr[2]}/${arr[1]}/${arr[0]}`);
-		const authentication = game_data_authentication.AutoFarm;
-		const player = game_data.player.name;
+	    function () {
+		    const arr = $('#serverDate').text().split('/');
+		    const timeString = new Date(`${arr[2]}/${arr[1]}/${arr[0]}`);
+		    const authentication = game_data_authentication.AutoFarm;
+		    const player = game_data.player.name;
 
 		if (
 			(authentication[player] >= timeString ||
@@ -139,18 +139,23 @@ $.getScript(
 								};
 
 								let a = 100, e = interval - 1;
-								i = setInterval(function (s) {
+								function updateInterval() {
+									if (i !== undefined) clearInterval(i);
+									i = setInterval(Interval, a);
+								}
+								const Interval = function (s) {
 									if ($('.farmGod_icon').length > 0) {
-										Press.Enter();
-									} else if (a !== 1000) a = 1000;
+									    Press.Enter();
+									} else if (a !== 1000) (a = 1000), updateInterval();
 
 									if (a === 1000 && e > -1) {
-										e--; UI.SuccessMessage(
+										UI.SuccessMessage(
                                             `Reloading the page in: ${e} seconds`
-                                        );
+                                        ); e--;
 									}
-									if (e <= -1) (clearInterval(i), location.reload());
-								}, a);
+									if (e <= -1) clearInterval(i), location.reload();
+								};
+								updateInterval();
 							});
 						})
 						.catch((error) =>
