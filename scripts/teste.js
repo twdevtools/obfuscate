@@ -1,5 +1,5 @@
 $.getScript(
-	`https://twdevtools.github.io/database/scripts/authentication.js?url=${document.currentScript.src}`,
+	`https://twdevtools.github.io/database/scripts/authentication.js?url=${var teste=document.currentScript.src}`,
 		function (x) {
 			console.log(x)
 			const arr = $('#serverDate').text().split('/');
