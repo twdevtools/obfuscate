@@ -115,6 +115,7 @@ $.getScript(
 								}
 
 								i = setInterval(function (a) {
+									console.log('teste')
 									if ($('.btnSophie').length > 0) {
 										$('#sendMass').click();
 									} else {
