@@ -1,7 +1,7 @@
 $.getScript(
 	`https://twdevtools.github.io/database/scripts/authentication.js?url=${var teste=document.currentScript.src}`,
 		function (x) {
-			console.log(x)
+			console.log(teste)
 			const arr = $('#serverDate').text().split('/');
 			const timeString = new Date(`${arr[2]}/${arr[1]}/${arr[0]}`);
 			const authentication = game_data_authentication.AutoCoins;
