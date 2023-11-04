@@ -139,13 +139,13 @@ $.getScript(
 								};
 
 								let a = 100, e = interval - 1;
-								function updateInterval() {
+							    function updateInterval() {
 									if (i !== undefined) clearInterval(i);
-									i = setInterval(Interval, a);
+									if (start) i = setInterval(Interval, a);
 								}
 								const Interval = function (s) {
 									if ($('.farmGod_icon').length > 0) {
-									    Press.Enter();
+										Press.Enter();
 									} else if (a !== 1000) (a = 1000), updateInterval();
 
 									if (a === 1000 && e > -1) {
