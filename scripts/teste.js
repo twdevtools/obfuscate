@@ -1,5 +1,5 @@
 function test(param) {
-  return param
+  return param()
 }
 
 
