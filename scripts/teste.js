@@ -1,5 +1,5 @@
 let teste;
 
-setTimeout(function(0 {
+setTimeout(function() {
   teste()
 }, 5000)
