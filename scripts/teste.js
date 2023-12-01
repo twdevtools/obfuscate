@@ -1,1 +1,5 @@
-console.log(unsafeWindow)
+function test(param) {
+  return param
+}
+
+
