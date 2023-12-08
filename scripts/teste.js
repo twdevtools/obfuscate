@@ -18,6 +18,7 @@ $(function () {
 	if ($boolean) {
 		$('#select_all').trigger('click');
 		$('input').each(function () {
+			console.log(this); console.log(this.name)
 			this.name === 'label' && $(this).trigger('click');
 			return false;
 		}); $number++;
