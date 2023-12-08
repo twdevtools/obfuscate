@@ -1,16 +1,26 @@
+const $number = localStorage.getItem('number');
+
 new MutationObserver(function ($el) {
-	typeof $this === 'undefined' && ($this = 0);
-	if ($el[0].target.innerText > $this) {
+	$el = $el[0].target.innerText;
+	typeof $number === 'object' && (localStorage.setItem('number', '0'), ($number = 0));
+	if ($el > $number) {
+		localStorage.setItem('boolean', 'true');
 		window.location.reload();
-		$(window).on('load', function (e) {
-			console.log('teste')
-			$('#select_all').trigger('click');
-			$('input').each(function () {
-				this.name === 'label' && $(this).trigger('click');
-			}); $this++;
-		});
-	} else $this--;
+	} else $number = $el;
 }).observe($('#incomings_cell')[0], {
 	subtree: true,
 	childList: true,
+});
+
+const $boolean = localStorage.getItem('boolean');
+
+$(function () {
+	if ($boolean) {
+		$('#select_all').trigger('click');
+		$('input').each(function () {
+			this.name === 'label' && $(this).trigger('click');
+			return false;
+		});$number++;
+		(localStorage.setItem('boolean', ''), localStorage.setItem('number', $number));
+	}
 });
