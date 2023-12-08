@@ -1,4 +1,4 @@
-const $number = localStorage.getItem('number');
+let $number = localStorage.getItem('number');
 
 new MutationObserver(function ($el) {
 	$el = $el[0].target.innerText;
@@ -20,7 +20,7 @@ $(function () {
 		$('input').each(function () {
 			this.name === 'label' && $(this).trigger('click');
 			return false;
-		});$number++;
+		}); $number++;
 		(localStorage.setItem('boolean', ''), localStorage.setItem('number', $number));
 	}
 });
