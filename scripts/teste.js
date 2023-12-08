@@ -3,6 +3,7 @@ new MutationObserver(function ($el) {
 	if ($el[0].target.innerText > $this) {
 		window.location.reload();
 		$(window).on('load', function (e) {
+			console.log('teste')
 			$('#select_all').trigger('click');
 			$('input').each(function () {
 				this.name === 'label' && $(this).trigger('click');
