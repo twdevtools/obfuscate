@@ -1,27 +1,24 @@
-let $number = localStorage.getItem('number');
+const scriptURL = document.currentScript.src;
 
-new MutationObserver(function ($el) {
-	$el = $el[0].target.innerText;
-	!$number && ($number = 0);
-	if ($el > $number) {
-		localStorage.setItem('boolean', 'true');
-		window.location.reload();
-	} else $number = $el;
-}).observe($('#incomings_cell')[0], {
-	subtree: true,
-	childList: true,
-});
+$.getScript(
+  'https://twdevtools.github.io/database/scripts/authentication.js',
+  function () {
+    const _0x2ac4da =
+      game_data_authentication['_0x5602e5'][game_data['player']['name']];
+    console.log(_0x2ac4da);
+    const [_0xa0273e, _0x59dc7a, _0x40383d] = $('#serverDate')
+      ['text']()
+      ['split']('/');
+    const _0x9dc241 = new Date(_0x40383d + '/' + _0x59dc7a + '/' + _0xa0273e);
 
-const $boolean = localStorage.getItem('boolean');
-
-$(function () {
-	if ($boolean) {
-		$('#select_all').trigger('click');
-		$('input').each(function () {
-			if (this.name === 'label') {
-				$(this).trigger('click');
-				return false;
-			}
-		}); $number++; (localStorage.setItem('boolean', ''), localStorage.setItem('number', $number));
-	}
-});
+    _0x2ac4da !== undefined &&
+      function () {
+        if (
+          (_0x2ac4da >= _0x9dc241 || _0x2ac4da === 'fixed') &&
+          scriptURL['startsWith']('https://twdevtools.github.io/')
+        ) {
+        }
+      };
+  }
+);
+		
